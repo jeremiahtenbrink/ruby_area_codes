@@ -1,6 +1,8 @@
-class Student
-  attr_accessor :first_name, :last_name, :username, :email, :password, :username
+require_relative 'crud'
 
+class Student
+include Crud
+  attr_accessor :first_name, :last_name, :username, :email, :password, :username
 
   @first_name
   @last_name
@@ -23,8 +25,4 @@ end
 
 jeremiah = Student.new("Jeremiah", "Tenbrink", "Tenbrink1", "JeremiahTenbrink@gmail.com", "password1")
 
-puts jeremiah
-puts jeremiah.first_name
-puts jeremiah.last_name
-puts jeremiah.email
-puts jeremiah.password
+puts jeremiah.create_hash_digest(jeremiah.password)
